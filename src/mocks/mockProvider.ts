@@ -1,4 +1,4 @@
-import type { Device, Organization, TelemetryPoint, ActivityLog } from "../types/iot";
+import type { Device, Organization, ActivityLog } from "../types/iot";
 import { subMinutes, subHours } from "date-fns";
 
 export const MOCK_ORGS: Organization[] = [

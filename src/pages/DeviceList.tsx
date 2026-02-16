@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIoTData } from '../hooks/useIoTData';
-import type { Device, DeviceStatus } from '../types/iot';
+import type { DeviceStatus } from '../types/iot';
 import {
     Search,
     Filter,
@@ -28,13 +28,13 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger
 } from '../components/ui/dropdown-menu';
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
+import { Card } from '../components/ui/card';
 import { motion } from 'framer-motion';
 
 import { useNavigate } from 'react-router-dom';
 
 export default function DeviceList() {
-    const { devices, filteredDevices, setFilter, setSearchQuery, isLoading } = useIoTData();
+    const { filteredDevices, setFilter, setSearchQuery, isLoading } = useIoTData();
     const [statusFilter, setStatusFilter] = React.useState<DeviceStatus | 'all'>('all');
     const navigate = useNavigate();
 

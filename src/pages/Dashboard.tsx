@@ -1,4 +1,3 @@
-import React from 'react';
 import { useIoTData } from '../hooks/useIoTData';
 import { MetricCard } from '../components/dashboard/MetricCard';
 import { motion } from 'framer-motion';
@@ -64,29 +63,28 @@ export default function Dashboard() {
                     title="Total Devices"
                     value={stats.totalDevices}
                     icon={<Server />}
-                    trend={{ value: 12, isPositive: true }}
-                    delay={0}
+                    change={12}
+                    trend="up"
                 />
                 <MetricCard
                     title="Active Now"
                     value={stats.activeDevices}
                     icon={<Activity />}
-                    trend={{ value: 5, isPositive: true }}
-                    delay={0.1}
+                    change={5}
+                    trend="up"
                 />
                 <MetricCard
                     title="Avg Signal"
                     value={`${Math.round(stats.avgSignal * 20)}%`}
                     icon={<Wifi />}
-                    trend={{ value: 2, isPositive: false }}
-                    delay={0.2}
+                    change={2}
+                    trend="down"
                 />
                 <MetricCard
                     title="Alerts (24h)"
                     value={stats.alerts24h}
                     icon={<AlertTriangle />}
                     className="border-red-500/20 bg-red-500/5 text-red-500"
-                    delay={0.3}
                 />
             </div>
 
